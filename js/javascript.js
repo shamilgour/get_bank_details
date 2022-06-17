@@ -1,23 +1,29 @@
-let btn=document.getElementById("search");
-let msg=document.getElementById("msg");
-let bank=document.getElementById("bank");
-let branch=document.getElementById("branch");
-let address=document.getElementById("address");
-let city=document.getElementById("city");
-let district=document.getElementById("district");
-let contact=document.getElementById("contact");
-let bankcode=document.getElementById("bankcode");
+let btn=document.querySelector("#search");
+let msg=document.querySelector("#msg");
+let bank=document.querySelector("#bank");
+let branch=document.querySelector("#branch");
+let address=document.querySelector("#address");
+let city=document.querySelector("#city");
+let district=document.querySelector("#district");
+let contact=document.querySelector("#contact");
+let bankcode=document.querySelector("#bankcode");
 
 btn.addEventListener("click",function(e){
     e.preventDefault();
-    let ifsc_code=document.getElementById("ifsc_code").value;
+    let ifsc_code=document.querySelector("#ifsc_code").value;
     if( ifsc_code==""){
-           msg.innerHTML="Please Enter IFSC Code";
+           document.querySelector("#ifsc_code").focus();;
+           msg.innerHTML='<i class="fa fa-warning"></i> Please Enter IFSC Code';
     }else{
+        document.querySelector("#search").style.display = "none";
+        document.querySelector(".buttonload").style.display = "inline-block";
         fetch('https://ifsc.razorpay.com/'+ifsc_code)
         .then(responce=>responce.json()) 
-         .then(data =>{if(data=="Not Found"){
-            msg.innerHTML="Enter Correct IFSC Code";
+         .then(data =>{
+            document.querySelector("#search").style.display = "inline-block";
+            document.querySelector(".buttonload").style.display = "none";
+            if(data=="Not Found"){
+            msg.innerHTML='<i class="fa fa-warning"></i> Enter Correct IFSC Code';
             bank.innerHTML="";
             branch.innerHTML="";
             address.innerHTML="";

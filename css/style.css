@@ -3,7 +3,7 @@
     background-color: red;
 }
 body .form_wrapper{
-    width:400px;
+    width:500px;
     display:inline-block;
     border-radius: 10px;
     height: auto;
@@ -15,7 +15,7 @@ body .form_wrapper{
     box-shadow: 0px 0px 3px 3px rgb(14, 8, 8);
 }
 .input-box{
-    padding: 10px 0px;
+    padding: 10px 10px;
     text-align: center;
     font-size: 20px;
     background: transparent;
@@ -28,11 +28,23 @@ body .form_wrapper{
 #search{
     border-radius: 10px;
     font-size: 20px;
-    padding: 10px 10px;
+    padding: 10px 19px;
     text-align: center;
     font-weight: 600;
     background-color: #04AA6D;
+    margin-left: 10px;
 }
+.buttonload{
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 10px;
+    text-align: center;
+    font-weight: 600;
+    margin-left: 10px;
+    background-color: #04AA6D;
+   display: none;
+}
+
 body .row{
     color:black;
     border-radius: 5px;
@@ -49,10 +61,12 @@ body .row{
 #msg{color:rgb(4, 0, 0);
     font-weight: 600;
     font-size: 20px;
-   
+    margin-top: 10px;
+    text-align: center;
 }
 
 span{
     color:blue;
     font-weight: 600;
 }
+b{font-family: Arial, Helvetica, sans-serif;}
